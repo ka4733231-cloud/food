@@ -1,0 +1,18 @@
+{
+  "liveServer.settings.root": "/",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "python.defaultInterpreterPath": "C:/Users/HP/anaconda3/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/backend"
+  ],
+  "python.terminal.activateEnvironment": true,
+  "files.associations": {
+    "*.css": "css",
+    "*.js": "javascript",
+    "*.html": "html"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  }
+}

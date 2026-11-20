@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database Service for NutriBite AI
+  postgres:
+    image: postgres:16-alpine
+    container_name: nutribite_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nutribite_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - nutribite_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d nutribite_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # NutriBite AI FastAPI Backend Service (Optional containerized run)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nutribite_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/nutribite_db
+      - ENVIRONMENT=development
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  nutribite_pgdata:
+    driver: local

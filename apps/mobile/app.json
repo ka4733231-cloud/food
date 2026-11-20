@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "NutriBite AI",
+    "slug": "nutribite-ai",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "scheme": "nutribite",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#234B35"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ai.nutribite.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#234B35"
+      },
+      "package": "ai.nutribite.app",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow NutriBite AI to access your camera to scan and identify meals."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow NutriBite AI to access your photo library to analyze food photos."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

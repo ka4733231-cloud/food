@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🚀 FastAPI: NutriBite Backend",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "C:/Users/HP/anaconda3/python.exe",
+      "jinja": true,
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/backend/.env",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      }
+    },
+    {
+      "name": "🌐 Frontend: Launch in Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000/frontend/index.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "🌐 Frontend: Launch in Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:3000/frontend/index.html",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

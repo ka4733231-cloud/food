@@ -1,0 +1,27 @@
+{
+  "name": "nutribite-ai-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NutriBite AI — Intelligent Food, Recipe, Nutrition & Meal Planning Ecosystem",
+  "workspaces": [
+    "apps/*",
+    "shared/*"
+  ],
+  "scripts": {
+    "dev:backend": "cd backend && python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload",
+    "dev:web": "python -m http.server 3000",
+    "dev:mobile": "npm run start --workspace=@nutribite/mobile",
+    "test": "node scratch/test_full_app_e2e.js && node scratch/test_mobile_app_architecture.js",
+    "test:all": "node scratch/test_full_app_e2e.js && node scratch/test_mobile_app_architecture.js"
+  },
+  "keywords": [
+    "food-ai",
+    "nutrition-tracker",
+    "recipe-discovery",
+    "meal-planner",
+    "computer-vision",
+    "freemium-saas"
+  ],
+  "author": "NutriBite AI Engineering Team",
+  "license": "UNLICENSED"
+}
